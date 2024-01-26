@@ -117,11 +117,6 @@
                                     <constraint firstItem="AvC-GX-V19" firstAttribute="leading" secondItem="eMb-dG-l4H" secondAttribute="leading" constant="16" id="g6H-xb-9jJ"/>
                                     <constraint firstAttribute="trailing" secondItem="AvC-GX-V19" secondAttribute="trailing" constant="16" id="yft-nL-YFh"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="22"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HB-FU-6bt">
                                 <rect key="frame" x="142" y="542" width="91" height="50"/>
@@ -129,11 +124,6 @@
                                 <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Start"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="22"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="animateButtonDidTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="lCf-tz-Nhy"/>
                                 </connections>
