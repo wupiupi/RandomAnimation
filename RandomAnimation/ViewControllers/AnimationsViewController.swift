@@ -79,11 +79,3 @@ private extension AnimationsViewController {
         currentAnimation = nextAnimation
     }
 }
-
-// MARK: - String
-private extension Double {
-    func string() -> String {
-        String(format: "%.2f", self)
-    }
-}
-
