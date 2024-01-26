@@ -25,9 +25,9 @@ struct Animation {
             Animation(
                 animation: presets[index],
                 curve: curves[index],
-                force: Double.random(in: 0.1...2.5),
-                duration: Double.random(in: 0.1...2.5),
-                delay: Double.random(in: 0.1...2.5)
+                force: Double.random(in: 0.1...2),
+                duration: Double.random(in: 0.1...1.5),
+                delay: Double.random(in: 0.1...0.5)
             )
         }
         
