@@ -31,17 +31,17 @@ final class AnimationsViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        springAnimationView.layer.cornerRadius = 22
         getNextAnimation()
     }
 
     // MARK: - IB Actions
     @IBAction func animateButtonDidTapped() {
         guard let currentAnimation else { return }
-        
+                
+        animateSpringView(with: currentAnimation)
         updateUI(with: currentAnimation)
         
-        springAnimationView.animation = currentAnimation.animation
-        springAnimationView.animate()
         getNextAnimation()
     }
 }
@@ -54,6 +54,16 @@ private extension AnimationsViewController {
         forceLabel.text = animation.force.string()
         durationLabel.text = animation.duration.string()
         delayLabel.text = animation.delay.string()
+    }
+    
+    func animateSpringView(with animation: Animation) {
+        springAnimationView.animation = currentAnimation.animation
+        springAnimationView.curve = currentAnimation.curve
+        springAnimationView.force = currentAnimation.force
+        springAnimationView.duration = currentAnimation.duration
+        springAnimationView.delay = currentAnimation.delay
+        
+        springAnimationView.animate()
     }
     
     func getNextAnimation() {
