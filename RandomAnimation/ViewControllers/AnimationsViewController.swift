@@ -63,6 +63,7 @@ private extension AnimationsViewController {
             animateButton.setTitle("Continue with: \(nextAnimation.animation)", for: .normal)
         } else {
             shouldChangeButtonTitle = true
+            updateUI(with: nextAnimation)
         }
         
         currentAnimation = nextAnimation
@@ -75,3 +76,4 @@ private extension Double {
         String(format: "%.2f", self)
     }
 }
+
