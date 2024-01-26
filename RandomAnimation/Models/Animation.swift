@@ -7,7 +7,7 @@
 
 struct Animation {
 
-    let preset: String
+    let animation: String
     let curve: String
     
     let force: Double
@@ -23,7 +23,7 @@ struct Animation {
         
         let animations = (0..<count).map { index in
             Animation(
-                preset: presets[index],
+                animation: presets[index],
                 curve: curves[index],
                 force: Double.random(in: 0.1...2.5),
                 duration: Double.random(in: 0.1...2.5),

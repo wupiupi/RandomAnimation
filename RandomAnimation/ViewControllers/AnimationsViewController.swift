@@ -19,42 +19,58 @@ final class AnimationsViewController: UIViewController {
     @IBOutlet var durationLabel: UILabel!
     @IBOutlet var delayLabel: UILabel!
     
+    @IBOutlet var animateButton: UIButton!
+
     // MARK: - Private Properties
-    let animations = Animation.getAnimations()
+    private let animations = Animation.getAnimations()
+    private var currentAnimation: Animation!
+    private var nextAnimation: Animation!
     
+    private var shouldChangeButtonTitle = false
+
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        getNextAnimation()
     }
 
     // MARK: - IB Actions
-    @IBAction func animateButtonDidTapped(_ sender: UIButton) {
-        guard let animation = animations.randomElement() else {
-            return
-        }
+    @IBAction func animateButtonDidTapped() {
+        guard let currentAnimation else { return }
         
-        updateUI(with: animation)
-        sender.setTitle("Continue with: \(animation.preset)", for: .normal)
+        updateUI(with: currentAnimation)
+        
+        springAnimationView.animation = currentAnimation.animation
+        springAnimationView.animate()
+        getNextAnimation()
     }
-    
 }
 
+// MARK: - Private Methods
 private extension AnimationsViewController {
     func updateUI(with animation: Animation) {
-        
-        presetLabel.text = animation.preset
+        presetLabel.text = animation.animation
         curveLabel.text = animation.curve
         forceLabel.text = animation.force.string()
         durationLabel.text = animation.duration.string()
         delayLabel.text = animation.delay.string()
+    }
+    
+    func getNextAnimation() {
+        nextAnimation = animations.randomElement()
         
-        springAnimationView.animation = animation.preset
-        springAnimationView.animate()
+        if shouldChangeButtonTitle {
+            animateButton.setTitle("Continue with: \(nextAnimation.animation)", for: .normal)
+        } else {
+            shouldChangeButtonTitle = true
+        }
+        
+        currentAnimation = nextAnimation
     }
 }
 
-extension Double {
+// MARK: - String
+private extension Double {
     func string() -> String {
         String(format: "%.2f", self)
     }

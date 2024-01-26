@@ -123,25 +123,19 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HB-FU-6bt">
-                                <rect key="frame" x="46.5" y="549" width="282" height="43"/>
-                                <color key="backgroundColor" systemColor="systemFillColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="282" id="CTa-04-cxx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HB-FU-6bt">
+                                <rect key="frame" x="142" y="542" width="91" height="50"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Start">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                </state>
+                                <state key="normal" title="Start"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <integer key="value" value="22"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="animateButtonDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7H9-lK-pHi"/>
+                                    <action selector="animateButtonDidTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="lCf-tz-Nhy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -158,6 +152,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Animations" id="y2t-3J-jrF"/>
                     <connections>
+                        <outlet property="animateButton" destination="4HB-FU-6bt" id="BN0-A0-s8a"/>
                         <outlet property="curveLabel" destination="Fry-uc-qdS" id="L64-2s-xEh"/>
                         <outlet property="delayLabel" destination="GOL-cG-CjO" id="9ON-h6-Yec"/>
                         <outlet property="durationLabel" destination="l0N-We-O7S" id="UbD-Bl-GqU"/>
@@ -172,14 +167,11 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemFillColor">
-            <color red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
